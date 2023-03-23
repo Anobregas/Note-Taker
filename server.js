@@ -38,7 +38,13 @@ app.post('/api/notes', (req, res) => {
         });
     });
 });
-
+app.delete('/api/notes/:id', (req, res) => {
+    const id = req.params.id; // Get the ID from the request parameters
+  
+    //Delete the note with the specified ID from the database
+  
+    res.status(204).end(); // Send a success response with no content
+  });
 app.get('/notes', (req, res) =>
     res.sendFile(path.join(__dirname, '/public/notes.html'))
 );
